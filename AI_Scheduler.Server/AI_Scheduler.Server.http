@@ -1,0 +1,6 @@
+@AI_Scheduler.Server_HostAddress = http://localhost:5090
+
+GET {{AI_Scheduler.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
