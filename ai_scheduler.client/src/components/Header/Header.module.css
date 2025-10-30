@@ -1,0 +1,8 @@
+.header {
+    display: flex;
+    color: red;
+}
+
+.button {
+    padding: 1px;
+}
