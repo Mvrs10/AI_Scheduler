@@ -67,6 +67,13 @@ button:focus-visible {
   }
 } */
 
+@font-face {
+  font-family: 'Aptos';
+  src: url('/fonts/Aptos.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -75,6 +82,8 @@ button:focus-visible {
 
 #root {
   /* React root div */
+  font-family: 'Aptos', Arial, sans-serif;
+  color: black;
   background-color: white;
   min-height: 100vh;
   display: flex;
