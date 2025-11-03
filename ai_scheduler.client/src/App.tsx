@@ -2,6 +2,7 @@
 
 import './App.css'
 import Header from './components/Header/Header.tsx'
+import Footer from './components/Footer/Footer.tsx'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
       <div>
         <Header />
         <h1>Hello World</h1>
+        <Footer />
       </div>
     </>
   )
