@@ -6,49 +6,78 @@
     height: 60px;
     background-color: #CE3A3E;
     z-index: 1000;
-    color: #E8EBEF;
     padding: 5px;
     display: grid;
-    grid-template-columns: 100px 1fr 200px;
+    grid-template-columns: 200px 1fr 200px;
     align-items: center;
-}
-.menu {
-    align-items: center;
-    padding-left: 5px;
 }
 
-.title {
+.menu, .title, .title-container, .items {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.title {
-    font-size: 40px;
+.menu {
+    gap: 15px;
+}
+
+.title-container {
+    width:auto;
+    height: 50px;
+    background-color: white;
+    gap: 15px;
+    padding: 0px 10px;
+}
+
+.title-container:hover {
+    cursor: pointer;
+    background-color: #E8EBEF;
+    opacity: 1;
+}
+
+.title-logo {
+    max-width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.title-text {
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.program-name {
+    font-size: 20px;
+    width: 120px;
+    height: 27px;
+    text-align: center;
+    background-color: white;
+    color:black;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.program-name:hover{
+    cursor: pointer;
 }
 
 .items {
-    display: flex;
-    align-items:center;
-    justify-content: right;
-    padding-right: 5px;
-    gap: 10px;
+    gap: 15px;
+    margin-left: 80px;
 }
 
-:global(.MuiIconButton-root).button {
+.button {  
   width: 35px;
   height: 35px;
   padding: 0;
-  border-radius: 8px;
-  border: 1px solid #E8EBEF;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.4s ease;
 }
 
-:global(.MuiIconButton-root).button:hover {
-    background-color: #773850;
+.button:hover .icon{
+    color: #773850;
 }
 
 .avatar:hover {

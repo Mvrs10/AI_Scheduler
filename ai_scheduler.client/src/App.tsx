@@ -12,7 +12,7 @@ function App() {
     <>
       <div>
         <Header />
-        <h1>Hello World</h1>
+        <h1 className="main">Hello World</h1>
         <Footer />
       </div>
     </>
