@@ -1,0 +1,39 @@
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  grid-template-rows: repeat(2, 300px);
+  row-gap: 100px;
+  column-gap: 70px;                               
+  justify-content: center;                  
+  padding: 70px 0px;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.avatar {
+  background-color: #1976d2;
+}
+
+.content {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #1976d2;
+}
