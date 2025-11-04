@@ -1,11 +1,23 @@
-.main {
-  display: grid;
-  grid-template-columns: repeat(4, 300px);
-  grid-template-rows: repeat(2, 300px);
-  row-gap: 100px;
-  column-gap: 70px;                               
-  justify-content: center;                  
-  padding: 70px 0px;
+.main-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    padding: 20px 0px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+.main-content {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(2, 300px);
+    row-gap: 100px;
+    column-gap: 70px;
+    justify-content: center;
+    padding: 30px 0px;
 }
 
 .card {

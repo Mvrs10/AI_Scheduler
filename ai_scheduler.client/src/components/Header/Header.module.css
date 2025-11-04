@@ -8,7 +8,7 @@
     z-index: 1000;
     padding: 5px;
     display: grid;
-    grid-template-columns: 200px 1fr 200px;
+    grid-template-columns: 400px 1fr 400px;
     align-items: center;
 }
 
@@ -20,6 +20,7 @@
 
 .menu {
     gap: 15px;
+    margin-right: 150px;
 }
 
 .title-container {

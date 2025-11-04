@@ -1,5 +1,5 @@
 import React from "react";
-import home from "./Home.module.css";
+
 import {
   Card,
   CardHeader,
@@ -10,6 +10,8 @@ import {
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SettingsIcon from "@mui/icons-material/Settings";
 import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
+
+import home from "./Home.module.css";
 
 const cards = [
   { title: "ABC Home" },
@@ -25,6 +27,10 @@ const cards = [
 const Home: React.FC = () => {
   return (
     <main className={home.main}>
+        <div className={home["main-title"]}>
+            HOME
+        </div>
+        <div className={home["main-content"]}>
       {cards.map((card, index) => (
         <Card key={index} className={home.card} elevation={3}>
           <CardHeader
@@ -42,6 +48,8 @@ const Home: React.FC = () => {
           </CardContent>
         </Card>
       ))}
+        </div>
+
     </main>
   );
 };
