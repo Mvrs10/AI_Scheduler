@@ -27,8 +27,8 @@ type AppModules = {
 
 const appModules : AppModules[] = [
         { title: "TI Automotive Home", path: "/", image: home, objectFit: "fill" },
-        { title: "View Schedules", path: "/view-schedules", image: viewSchedule, objectFit: "fill" },
-        { title: "Generate Schedules", path: "/generate-schedules", image: generateSchedule, objectFit: "fill" },
+        { title: "Schedule View", path: "/view-schedules", image: viewSchedule, objectFit: "fill" },
+        { title: "Schedule Generation", path: "/generate-schedules", image: generateSchedule, objectFit: "fill" },
         { title: "Plant Status", path: "/plant-status", image: plantStatus, objectFit: "fill" },
         { title: "Configuration", path: "/configuration", image: config, objectFit: "fill" },
         { title: "Logs", path: "/logs", image: log, objectFit: "fill" },

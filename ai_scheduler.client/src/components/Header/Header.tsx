@@ -55,7 +55,7 @@ const Header = () => {
                     transformOrigin={{ vertical: "top", horizontal: "left" }}
                 >
                     {appModules.map((item) => (
-                        <MenuItem key={item.title} onClick={handleMenuClose}>
+                        <MenuItem className={header["menu-item"]} sx={{"&:hover": {color: "#CE3A3E", textDecoration: "underline", textUnderlineOffset: "0.2rem"}}} key={item.title} onClick={handleMenuClose}>
                             {item.title}
                         </MenuItem>
                     ))}

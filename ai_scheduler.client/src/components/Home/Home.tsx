@@ -32,7 +32,6 @@ const Home: React.FC = () => {
                 },
                 "& .MuiCardHeader-action": {
                   alignSelf: "center",
-                  marginRight: "0.25rem",
                 },
               }}
               action={<IconButton aria-label="unlocked-module"><LockOpenIcon /></IconButton>}
