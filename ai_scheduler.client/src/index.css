@@ -89,7 +89,3 @@ button:focus-visible {
   display: flex;
   flex-flow: column nowrap;
 }
-
-.main{
-  text-align: center;
-}

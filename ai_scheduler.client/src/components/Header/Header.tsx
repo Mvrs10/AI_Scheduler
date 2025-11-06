@@ -5,23 +5,14 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { Menu, MenuItem, IconButton, Avatar } from '@mui/material'
 
+import { appName, appModules } from '../../constants/appConstants.ts'
 import Clock from '../../components/Clock/Clock.tsx'
 import header from "./Header.module.css"
-import logo from "../../images/TI Logo-Colour.png"
+import logo from '../../images/TI Logo-Colour.png'
 
 const Header = () => {
 
     /*Constants*/
-    const menuTitles : {title: string, path : string}[] = [
-        { title: "ABC Home", path: "/" },
-        { title: "View Schedules", path: "/view-schedules" },
-        { title: "Generate Schedules", path: "/generate-schedules" },
-        { title: "Plant Status", path: "/plant-status" },
-        { title: "Configuration", path: "/configuration" },
-        { title: "Logs", path: "/logs" },
-        { title: "My Profile", path: "/profile" },
-        { title: "Help", path: "/help" },
-    ];
 
     /*State variables*/
     const [anchorEl, setAnchorEl] = useState<null | HTMLButtonElement>(null);
@@ -63,7 +54,7 @@ const Header = () => {
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
                     transformOrigin={{ vertical: "top", horizontal: "left" }}
                 >
-                    {menuTitles.map((item) => (
+                    {appModules.map((item) => (
                         <MenuItem key={item.title} onClick={handleMenuClose}>
                             {item.title}
                         </MenuItem>
@@ -75,8 +66,8 @@ const Header = () => {
                 </div>                
             </div>
 
-            <div className={header.program} aria-label="AI Scheduler">
-                <span className={header["program-name"]}>AI Scheduler</span>
+            <div className={header.app} aria-label="AI Scheduler">
+                <span className={header["app-name"]}>{appName}</span>
             </div>
 
             <div className={header.items}>

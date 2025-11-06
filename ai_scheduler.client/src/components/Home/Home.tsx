@@ -3,26 +3,16 @@ import React from "react";
 import {
   Card,
   CardHeader,
-  CardContent,
-  IconButton,
-  Avatar,
+  CardMedia,
+  Typography,
+  IconButton
 } from "@mui/material";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import SettingsIcon from "@mui/icons-material/Settings";
-import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
+//import LockOutlineIcon from '@mui/icons-material/LockOutline';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 
 import home from "./Home.module.css";
+import { appModules } from "../../constants/appConstants";
 
-const cards : { title : string }[] = [
-  { title: "ABC Home" },
-  { title: "View Schedules" },
-  { title: "Generate Schedules" },
-  { title: "Plant Status" },
-  { title: "Configuration" },
-  { title: "Logs" },
-  { title: "My Profile" },
-  { title: "Help" },
-];
 
 const Home: React.FC = () => {
   return (
@@ -30,25 +20,33 @@ const Home: React.FC = () => {
         <div className={home["main-title"]}>
             HOME
         </div>
-        <div className={home["main-content"]}>
-      {cards.map((card, index) => (
-        <Card key={index} className={home.card} elevation={3}>
-          <CardHeader
-            avatar={<Avatar className={home.avatar}>{card.title.substring(0,1)}</Avatar>}
-            action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title={card.title}
-          />
-          <CardContent className={home.content}>
-            <ChangeHistoryIcon className={home.icon} />
-            <SettingsIcon className={home.icon} />
-          </CardContent>
-        </Card>
-      ))}
-        </div>
+      <div className={home["main-content"]}>
+        {appModules.map((module, index) => (
+          <Card key={index} className={home.card} elevation={3}>
+            <CardHeader
+              sx={{
+                backgroundColor: "#E8EBEF",
+                height: "3rem",
+                "& .MuiCardHeader-content": {
+                  marginLeft: "0.25rem",
+                },
+                "& .MuiCardHeader-action": {
+                  alignSelf: "center",
+                  marginRight: "0.25rem",
+                },
+              }}
+              action={<IconButton aria-label="unlocked-module"><LockOpenIcon /></IconButton>}
+              title={<Typography sx={{ fontSize: "1.2rem", fontWeight: "600" }}>{module.title}</Typography>}
+            />
+            <CardMedia 
+              sx={{ height: "13rem", objectFit: module.objectFit }}
+              component="img"
+              image={module.image}
+              title={module.title}
+            />
+          </Card>
+        ))}
+      </div>
 
     </main>
   );

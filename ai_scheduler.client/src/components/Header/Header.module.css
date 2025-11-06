@@ -1,90 +1,88 @@
 .header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    background-color: #CE3A3E;
-    z-index: 1000;
-    padding: 5px;
-    display: grid;
-    grid-template-columns: 400px 1fr 400px;
-    align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.75rem; /* 60px */
+  background-color: #CE3A3E;
+  z-index: 1000;
+  padding: 0.3125rem; /* 5px */
+  display: grid;
+  grid-template-columns: 25rem 1fr 25rem; /* 400px */
+  align-items: center;
 }
 
-.menu, .program, .title-container, .items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.menu, .app, .title-container, .items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {
-    gap: 15px;
-    margin-right: 80px;
+  gap: 0.9375rem; /* 15px */
+  margin-right: 5rem; /* 80px */
 }
 
 .title-container {
-    width:auto;
-    height: 35px;
-    background-color: white;
-    gap: 15px;
-    padding: 0px 10px;
+  width: auto;
+  height: 2.1875rem; /* 35px */
+  background-color: white;
+  gap: 0.9375rem; /* 15px */
+  padding: 0 0.625rem; /* 10px */
 }
 
 .title-container:hover {
-    cursor: pointer;
-    background-color: #E8EBEF;
-    opacity: 1;
+  cursor: pointer;
+  background-color: #E8EBEF;
+  opacity: 1;
 }
 
 .title-logo {
-    max-width: 27px;
-    height: 27px;
-    object-fit: contain;
+  max-width: 1.6875rem; /* 27px */
+  height: 1.6875rem; /* 27px */
+  object-fit: contain;
 }
 
 .title-text {
-    color: black;
-    font-size: 20px;
-    font-weight: 600;
+  color: black;
+  font-size: 1.25rem; /* 20px */
+  font-weight: 600;
 }
 
-.program-name {
-    font-size: 30px;
-    width: auto;
-    height: 35px;
-    text-align: center;
-    color:white;
-    letter-spacing: 1px;
-    transition: background-color 0.4s ease, color 0.4s ease;
+.app-name {
+  font-size: 1.875rem; /* 30px */
+  width: auto;
+  height: 2.1875rem; /* 35px */
+  text-align: center;
+  color: white;
+  letter-spacing: 0.0625rem; /* 1px */
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-.program-name:hover{
-    cursor: pointer;
+.program-name:hover {
+  cursor: pointer;
 }
 
 .items {
-    gap: 15px;
-    margin-left: 80px;
+  gap: 0.9375rem; /* 15px */
+  margin-left: 5rem; /* 80px */
 }
 
-.button {  
-  width: 35px;
-  height: 35px;
+.button {
+  width: 2.1875rem; /* 35px */
+  height: 2.1875rem; /* 35px */
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.button:hover .icon{
-    color: #773850;
+.button:hover .icon {
+  color: #773850;
 }
 
 .avatar:hover {
-    cursor: pointer;
-    transform: scale(1,1);
-    border: 1px solid white;
+  cursor: pointer;
+  transform: scale(1, 1);
+  border: 0.0625rem solid white; /* 1px */
 }
-
-
