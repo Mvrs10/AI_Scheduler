@@ -15,7 +15,7 @@
 
 .left {
   display: flex;
-  margin-left: -20px;
+  margin-left: 10px;
 }
 
 .logo {
@@ -33,6 +33,7 @@
 .right {
   display: flex;
   align-items: center;
+  margin-right: 30px;
   gap: 8px;
 }
 

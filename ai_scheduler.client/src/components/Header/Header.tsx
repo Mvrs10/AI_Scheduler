@@ -12,7 +12,7 @@ import logo from "../../images/TI Logo-Colour.png"
 const Header = () => {
 
     /*Constants*/
-    const menuTitles = [
+    const menuTitles : {title: string, path : string}[] = [
         { title: "ABC Home", path: "/" },
         { title: "View Schedules", path: "/view-schedules" },
         { title: "Generate Schedules", path: "/generate-schedules" },
@@ -25,14 +25,12 @@ const Header = () => {
 
     /*State variables*/
     const [anchorEl, setAnchorEl] = useState<null | HTMLButtonElement>(null);
-    const open = Boolean(anchorEl);
+    const open : boolean = Boolean(anchorEl);
 
-    // Open menu
     const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);
     };
 
-    // Close menu
     const handleMenuClose = () => {
         setAnchorEl(null);
     };
@@ -55,7 +53,7 @@ const Header = () => {
     const content = (
         <div className={header.header}>
             <div className={header.menu} >
-                <IconButton className={header.button} sx={{ ...buttonStyles }} onClick={handleMenuClick}>
+                <IconButton className={header.button} sx={{ ...buttonStyles }} onClick={handleMenuClick} aria-label="Menu">
                     <MenuRoundedIcon className={header.icon} sx={{ ...iconStyles }} />
                 </IconButton>
                 <Menu
@@ -71,23 +69,23 @@ const Header = () => {
                         </MenuItem>
                     ))}
                 </Menu>
-                <span className={header["program-name"]}>AI Scheduler</span>
-            </div>
-
-            <div className={header.title}>
                 <div className={header["title-container"]}>
                     <img src={logo} alt="TI Automotive Logo" className={header["title-logo"]} />
                     <span className={header["title-text"]}>TI AUTOMOTIVE</span>
-                </div>
+                </div>                
+            </div>
+
+            <div className={header.program} aria-label="AI Scheduler">
+                <span className={header["program-name"]}>AI Scheduler</span>
             </div>
 
             <div className={header.items}>
                 <Clock />
-                <IconButton className={header.button} sx={{ ...buttonStyles }}>
+                <IconButton className={header.button} sx={{ ...buttonStyles }} aria-label="Notification">
                     <NotificationsIcon className={header.icon} sx={{ ...iconStyles }} />
                 </IconButton>
 
-                <Avatar className={header.avatar} sx={{ bgcolor: "#33757F", width: 35, height: 35, fontSize: 17 }}>AD</Avatar>
+                <Avatar className={header.avatar} sx={{ bgcolor: "#33757F", width: 35, height: 35, fontSize: 17 }} aria-label="Avatar">AD</Avatar>
             </div>
         </div>
     )

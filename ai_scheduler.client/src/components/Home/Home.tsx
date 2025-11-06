@@ -13,7 +13,7 @@ import ChangeHistoryIcon from "@mui/icons-material/ChangeHistory";
 
 import home from "./Home.module.css";
 
-const cards = [
+const cards : { title : string }[] = [
   { title: "ABC Home" },
   { title: "View Schedules" },
   { title: "Generate Schedules" },
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
       {cards.map((card, index) => (
         <Card key={index} className={home.card} elevation={3}>
           <CardHeader
-            avatar={<Avatar className={home.avatar}>A</Avatar>}
+            avatar={<Avatar className={home.avatar}>{card.title.substring(0,1)}</Avatar>}
             action={
               <IconButton aria-label="settings">
                 <MoreVertIcon />
