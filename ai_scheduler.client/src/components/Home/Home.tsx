@@ -10,19 +10,19 @@ import {
 //import LockOutlineIcon from '@mui/icons-material/LockOutline';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 
-import home from "./Home.module.css";
+import styles from "./Home.module.css";
 import { appModules } from "../../constants/appConstants";
 
 
 const Home: React.FC = () => {
   return (
-    <main className={home.main}>
-        <div className={home["main-title"]}>
+    <main className={styles.main}>
+        <div className={styles["main-title"]}>
             HOME
         </div>
-      <div className={home["main-content"]}>
+      <div className={styles["main-content"]}>
         {appModules.map((module, index) => (
-          <Card key={index} className={home.card} elevation={3}>
+          <Card key={index} className={styles.card} elevation={3}>
             <CardHeader
               sx={{
                 backgroundColor: "#E8EBEF",

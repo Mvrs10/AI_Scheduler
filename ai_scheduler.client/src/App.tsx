@@ -1,11 +1,12 @@
 //import { useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
 import { ThemeProvider } from '@mui/material/styles'
 
 import './App.css'
 import { appTheme } from './constants/appConstants.ts'
 import Header from './components/Header/Header.tsx'
-import Home from './components/Home/Home.tsx'
+import AppRouter from './AppRouter.tsx'
 import Footer from './components/Footer/Footer.tsx'
 
 function App() {
@@ -15,11 +16,13 @@ function App() {
   return (
     <>
       <div>
-        <ThemeProvider theme={appTheme}>
-          <Header />
-          <Home />
-          <Footer />
-        </ThemeProvider>
+        <BrowserRouter>
+          <ThemeProvider theme={appTheme}>
+            <Header />
+              <AppRouter />
+            <Footer />
+          </ThemeProvider>
+        </BrowserRouter>
       </div>
     </>
   )

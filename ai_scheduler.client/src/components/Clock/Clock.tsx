@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import clock from "./Clock.module.css";
+import styles from "./Clock.module.css";
 
 const Clock = () => {
 
@@ -34,7 +34,7 @@ const Clock = () => {
         return () => clearTimeout(timeout);
     }, []);
 
-  return <div className={clock.container}>
+  return <div className={styles.container}>
     <span>{date.toLocaleDateString()}</span>
     <span>{time}</span>
   </div>;

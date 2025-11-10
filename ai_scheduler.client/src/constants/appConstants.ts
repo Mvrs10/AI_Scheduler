@@ -18,24 +18,28 @@ const appTheme = createTheme({
 
 
 /* Content */
-type AppModules = {
+type Modules = {
     title: string,
     path: string,
     image: string,
     objectFit: string,
 }
 
-const appModules : AppModules[] = [
+const appModules : Modules[] = [
         { title: "TI Automotive Home", path: "/", image: home, objectFit: "fill" },
         { title: "Schedule View", path: "/view-schedules", image: viewSchedule, objectFit: "fill" },
         { title: "Schedule Generation", path: "/generate-schedules", image: generateSchedule, objectFit: "fill" },
         { title: "Plant Status", path: "/plant-status", image: plantStatus, objectFit: "fill" },
         { title: "Configuration", path: "/configuration", image: config, objectFit: "fill" },
-        { title: "Logs", path: "/logs", image: log, objectFit: "fill" },
+        { title: "Logbook", path: "/logs", image: log, objectFit: "fill" },
         { title: "My Profile", path: "/profile", image: profile, objectFit: "contain" },
         { title: "Help", path: "/help", image: help, objectFit: "contain" },
 ]
 
+const profileModules : Modules[] = [
+  {title: "Sign out", path: "/", image: "", objectFit: ""}
+]
+
 const appName : string = "AI Scheduler";
 
-export { type AppModules, appModules, appName, appTheme }
+export { type Modules, appModules, profileModules, appName, appTheme }

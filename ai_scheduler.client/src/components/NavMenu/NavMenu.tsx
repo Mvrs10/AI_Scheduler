@@ -1,10 +1,10 @@
 import React from 'react'
 import {type PopoverOrigin, Menu, MenuItem} from '@mui/material'
 
-import { type AppModules } from '../../constants/appConstants'
+import { type Modules } from '../../constants/appConstants'
 
 type NavMenuProps = {
-    items: AppModules[];
+    items: Modules[];
     anchorEl: HTMLElement | null;
     open: boolean;
     onClose: () => void;

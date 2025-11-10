@@ -1,14 +1,15 @@
-import React, { useState } from "react"
-//import { useNavigate } from "react-router-dom";
+//import React, { useState } from "react"
+//import { useNavigate } from "react-router-dom"
 
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
+import NotificationsIcon from '@mui/icons-material/Notifications'
 import { IconButton, Avatar } from '@mui/material'
 
-import { appName, appModules } from '../../constants/appConstants.ts'
+import { appName, appModules, profileModules } from '../../constants/appConstants.ts'
+import useMenu from '../../hooks/useMenu.tsx'
 import NavMenu from '../../components/NavMenu/NavMenu.tsx'
 import Clock from '../../components/Clock/Clock.tsx'
-import header from "./Header.module.css"
+import styles from "./Header.module.css"
 import logo from '../../images/TI Logo-Colour.png'
 
 const Header = () => {
@@ -16,16 +17,8 @@ const Header = () => {
     /*Constants*/
 
     /*State variables*/
-    const [anchorEl, setAnchorEl] = useState<null | HTMLButtonElement>(null);
-    const open : boolean = Boolean(anchorEl);
-
-    const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-    };
+    const appMenu = useMenu();
+    const profileMenu = useMenu();
 
     /*Styling variables*/
     const buttonStyles = {
@@ -43,36 +36,45 @@ const Header = () => {
     }
 
     const content = (
-        <header className={header.header}>
-            <div className={header.menu} >
-                <IconButton className={header.button} sx={{ ...buttonStyles }} onClick={handleMenuClick} aria-label="Menu">
-                    <MenuRoundedIcon className={header.icon} sx={{ ...iconStyles }} />
+        <header className={styles.header}>
+            <div className={styles.menu} >
+                <IconButton className={styles.button} sx={{ ...buttonStyles }} onClick={appMenu.handleOpen} aria-label="Menu">
+                    <MenuRoundedIcon className={styles.icon} sx={{ ...iconStyles }} />
                 </IconButton>
                 <NavMenu 
                     items={appModules}
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleMenuClose}
+                    anchorEl={appMenu.anchorEl}
+                    open={appMenu.open}
+                    onClose={appMenu.handleClose}
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
                     transformOrigin={{ vertical: "top", horizontal: "left" }}
                 />
-                <div className={header["title-container"]}>
-                    <img src={logo} alt="TI Automotive Logo" className={header["title-logo"]} />
-                    <span className={header["title-text"]}>TI AUTOMOTIVE</span>
+                <div className={styles["title-container"]}>
+                    <img src={logo} alt="TI Automotive Logo" className={styles["title-logo"]} />
+                    <span className={styles["title-text"]}>TI AUTOMOTIVE</span>
                 </div>                
             </div>
 
-            <div className={header.app} aria-label="AI Scheduler">
-                <span className={header["app-name"]}>{appName}</span>
+            <div className={styles.app} aria-label="AI Scheduler">
+                <span className={styles["app-name"]}>{appName}</span>
             </div>
 
-            <div className={header.items}>
+            <div className={styles.items}>
                 <Clock />
-                <IconButton className={header.button} sx={{ ...buttonStyles }} aria-label="Notification">
-                    <NotificationsIcon className={header.icon} sx={{ ...iconStyles }} />
+
+                <IconButton className={styles.button} sx={{ ...buttonStyles }} aria-label="Notification">
+                    <NotificationsIcon className={styles.icon} sx={{ ...iconStyles }} />
                 </IconButton>
 
-                <Avatar className={header.avatar} sx={{ bgcolor: "#33757F", width: 35, height: 35, fontSize: 17 }} aria-label="Avatar">AD</Avatar>
+                <Avatar className={styles.avatar} sx={{ bgcolor: "#33757F", width: 35, height: 35, fontSize: 17 }} onClick={profileMenu.handleOpen} aria-label="Avatar">AD</Avatar>
+                <NavMenu
+                    items={profileModules}
+                    anchorEl={profileMenu.anchorEl}
+                    open={profileMenu.open}
+                    onClose={profileMenu.handleClose}
+                    anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                    transformOrigin={{ vertical: "top", horizontal: "right" }}
+                />
             </div>
         </header>
     )
