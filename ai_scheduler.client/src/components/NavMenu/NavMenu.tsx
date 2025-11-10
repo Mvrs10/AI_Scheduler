@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {type PopoverOrigin, Menu, MenuItem} from '@mui/material'
 
 import { type Modules } from '../../constants/appConstants'
@@ -28,8 +29,14 @@ const NavMenu: React.FC<NavMenuProps> = ({
         anchorOrigin={anchorOrigin}
         transformOrigin={transformOrigin}
     >
-          {items.map((item) => (
-              <MenuItem sx={{ "&:hover": { color: "#CE3A3E", textDecoration: "underline", textUnderlineOffset: "0.2rem" } }} key={item.title} onClick={handleMenuClose}>
+          {items.map((item,index) => (
+              <MenuItem
+                  key={index}
+                  component={Link}
+                  to={item.path}
+                  {...(item.path.includes("https") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  onClick={handleMenuClose}
+                  sx={{ "&:hover": { color: "#CE3A3E", textDecoration: "underline", textUnderlineOffset: "0.2rem" } }}  >
                   {item.title}
               </MenuItem>
           ))}

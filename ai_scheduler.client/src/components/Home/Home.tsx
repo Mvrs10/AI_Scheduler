@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom'
 
 import {
   Card,
@@ -6,7 +7,7 @@ import {
   CardMedia,
   Typography,
   IconButton
-} from "@mui/material";
+} from '@mui/material';
 //import LockOutlineIcon from '@mui/icons-material/LockOutline';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 
@@ -16,13 +17,15 @@ import { appModules } from "../../constants/appConstants";
 
 const Home: React.FC = () => {
   return (
-    <main className={styles.main}>
-        <div className={styles["main-title"]}>
-            HOME
+    <main className={`${styles.main} main-container`}>
+        <div className="module-title">
+            Home
         </div>
       <div className={styles["main-content"]}>
         {appModules.map((module, index) => (
-          <Card key={index} className={styles.card} elevation={3}>
+          <Card key={index} component={Link} to={module.path} className={styles.card} elevation={3}
+            {...(module.path.includes("https") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          >
             <CardHeader
               sx={{
                 backgroundColor: "#E8EBEF",

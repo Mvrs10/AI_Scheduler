@@ -40,3 +40,21 @@
 .read-the-docs {
   color: #888;
 } */
+
+
+/* Global App Css */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 3.75rem*2); /* full viewport height - Header - Footer */
+  min-width: 100vw;
+}
+
+.module-title {
+  text-align: center;
+  font-size: 2rem; /* 32px */
+  padding: 0.5rem 0; /* 24px 0px */
+  text-decoration: underline;
+  text-decoration-thickness: 0.2rem; /* 2px */
+  text-underline-offset: 0.5rem; /* 8px */
+}

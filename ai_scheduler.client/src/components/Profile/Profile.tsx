@@ -4,8 +4,8 @@ import { appModules } from '../../constants/appConstants'
 
 const Profile: React.FC = () => {
     return (
-        <main>
-            <div>
+        <main className="main-container">
+            <div className="module-title">
                 {appModules[6].title}
             </div>
         </main>

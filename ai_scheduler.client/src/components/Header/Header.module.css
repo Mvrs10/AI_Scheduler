@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.menu, .app, .title-container, .items {
+.menu, .app, .home-button, .items {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,15 +23,16 @@
   margin-right: 5rem; /* 80px */
 }
 
-.title-container {
+.home-button {
   width: auto;
   height: 2.1875rem; /* 35px */
   background-color: white;
   gap: 0.9375rem; /* 15px */
   padding: 0 0.625rem; /* 10px */
+  text-decoration: none;
 }
 
-.title-container:hover {
+.home-button:hover {
   cursor: pointer;
   background-color: #E8EBEF;
   opacity: 1;

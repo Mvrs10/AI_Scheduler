@@ -1,5 +1,6 @@
 //import React, { useState } from "react"
 //import { useNavigate } from "react-router-dom"
+import { Link } from 'react-router-dom'
 
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import NotificationsIcon from '@mui/icons-material/Notifications'
@@ -49,10 +50,10 @@ const Header = () => {
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
                     transformOrigin={{ vertical: "top", horizontal: "left" }}
                 />
-                <div className={styles["title-container"]}>
+                <Link to="/" className={styles["home-button"]}>
                     <img src={logo} alt="TI Automotive Logo" className={styles["title-logo"]} />
                     <span className={styles["title-text"]}>TI AUTOMOTIVE</span>
-                </div>                
+                </Link>                
             </div>
 
             <div className={styles.app} aria-label="AI Scheduler">
