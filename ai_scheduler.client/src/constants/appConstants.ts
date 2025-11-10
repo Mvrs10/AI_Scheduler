@@ -38,4 +38,4 @@ const appModules : AppModules[] = [
 
 const appName : string = "AI Scheduler";
 
-export { appModules, appName, appTheme }
+export { type AppModules, appModules, appName, appTheme }

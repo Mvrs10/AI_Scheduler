@@ -3,9 +3,10 @@ import React, { useState } from "react"
 
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { Menu, MenuItem, IconButton, Avatar } from '@mui/material'
+import { IconButton, Avatar } from '@mui/material'
 
 import { appName, appModules } from '../../constants/appConstants.ts'
+import NavMenu from '../../components/NavMenu/NavMenu.tsx'
 import Clock from '../../components/Clock/Clock.tsx'
 import header from "./Header.module.css"
 import logo from '../../images/TI Logo-Colour.png'
@@ -42,24 +43,19 @@ const Header = () => {
     }
 
     const content = (
-        <div className={header.header}>
+        <header className={header.header}>
             <div className={header.menu} >
                 <IconButton className={header.button} sx={{ ...buttonStyles }} onClick={handleMenuClick} aria-label="Menu">
                     <MenuRoundedIcon className={header.icon} sx={{ ...iconStyles }} />
                 </IconButton>
-                <Menu
+                <NavMenu 
+                    items={appModules}
                     anchorEl={anchorEl}
                     open={open}
                     onClose={handleMenuClose}
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
                     transformOrigin={{ vertical: "top", horizontal: "left" }}
-                >
-                    {appModules.map((item) => (
-                        <MenuItem className={header["menu-item"]} sx={{"&:hover": {color: "#CE3A3E", textDecoration: "underline", textUnderlineOffset: "0.2rem"}}} key={item.title} onClick={handleMenuClose}>
-                            {item.title}
-                        </MenuItem>
-                    ))}
-                </Menu>
+                />
                 <div className={header["title-container"]}>
                     <img src={logo} alt="TI Automotive Logo" className={header["title-logo"]} />
                     <span className={header["title-text"]}>TI AUTOMOTIVE</span>
@@ -78,7 +74,7 @@ const Header = () => {
 
                 <Avatar className={header.avatar} sx={{ bgcolor: "#33757F", width: 35, height: 35, fontSize: 17 }} aria-label="Avatar">AD</Avatar>
             </div>
-        </div>
+        </header>
     )
 
     return content;
