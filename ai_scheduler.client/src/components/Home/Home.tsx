@@ -27,7 +27,7 @@ const Home: React.FC<PropsType> = ({isAdmin}) => {
       <div className={styles["main-content"]}>
         {appModules.map((module, index) => {
           const locked = module.requireAdmin && !isAdmin;
-          
+          //const unlocked = !module.requireAdmin || isAdmin;
           return (
           <Card key={index} component={locked? "div":Link} to={locked? undefined:module.path} className={styles.card} elevation={3} sx={{cursor:locked?"not-allowed":"pointer", opacity:locked?0.7:1}}
             {...(module.path.includes("https") ? { target: "_blank", rel: "noopener noreferrer" } : {})}

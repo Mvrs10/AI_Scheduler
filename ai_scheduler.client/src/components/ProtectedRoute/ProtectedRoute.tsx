@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom'
 
 type PropsType = {
     isAdmin: boolean;
-    children: React.ReactElement;
+    children: React.ReactNode;
 }
 
 const ProtectedRoute: React.FC<PropsType> = ({isAdmin, children}) => {

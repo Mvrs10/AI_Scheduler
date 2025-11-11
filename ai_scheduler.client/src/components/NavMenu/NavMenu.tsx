@@ -4,7 +4,7 @@ import {type PopoverOrigin, Menu, MenuItem} from '@mui/material'
 
 import { type Modules } from '../../constants/appConstants'
 
-type NavMenuProps = {
+type PropsType = {
     items: Modules[];
     anchorEl: HTMLElement | null;
     open: boolean;
@@ -13,7 +13,7 @@ type NavMenuProps = {
     transformOrigin: PopoverOrigin;
 }
 
-const NavMenu: React.FC<NavMenuProps> = ({
+const NavMenu: React.FC<PropsType> = ({
     items,
     anchorEl,
     open,
