@@ -8,22 +8,28 @@ import {
   Typography,
   IconButton
 } from '@mui/material';
-//import LockOutlineIcon from '@mui/icons-material/LockOutline';
+import LockOutlineIcon from '@mui/icons-material/LockOutline';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 
 import styles from "./Home.module.css";
 import { appModules } from "../../constants/appConstants";
 
+type PropsType = {
+  isAdmin: boolean;
+}
 
-const Home: React.FC = () => {
+const Home: React.FC<PropsType> = ({isAdmin}) => {
   return (
     <main className={`${styles.main} main-container`}>
         <div className="module-title">
             Home
         </div>
       <div className={styles["main-content"]}>
-        {appModules.map((module, index) => (
-          <Card key={index} component={Link} to={module.path} className={styles.card} elevation={3}
+        {appModules.map((module, index) => {
+          const locked = module.requireAdmin && !isAdmin;
+          
+          return (
+          <Card key={index} component={locked? "div":Link} to={locked? undefined:module.path} className={styles.card} elevation={3} sx={{cursor:locked?"not-allowed":"pointer", opacity:locked?0.7:1}}
             {...(module.path.includes("https") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           >
             <CardHeader
@@ -37,7 +43,7 @@ const Home: React.FC = () => {
                   alignSelf: "center",
                 },
               }}
-              action={<IconButton aria-label="unlocked-module"><LockOpenIcon /></IconButton>}
+              action={<IconButton aria-label="unlocked-module">{locked? <LockOutlineIcon />:<LockOpenIcon />}</IconButton>}
               title={<Typography sx={{ fontSize: "1.2rem", fontWeight: "600" }}>{module.title}</Typography>}
             />
             <CardMedia 
@@ -47,7 +53,8 @@ const Home: React.FC = () => {
               title={module.title}
             />
           </Card>
-        ))}
+        );
+        })}
       </div>
 
     </main>

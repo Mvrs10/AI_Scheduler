@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import NotificationsIcon from '@mui/icons-material/Notifications'
-import { IconButton, Avatar } from '@mui/material'
+import { IconButton, Avatar, Switch } from '@mui/material'
 
 import { appName, appModules, profileModules } from '../../constants/appConstants.ts'
 import useMenu from '../../hooks/useMenu.tsx'
@@ -13,7 +13,12 @@ import Clock from '../../components/Clock/Clock.tsx'
 import styles from "./Header.module.css"
 import logo from '../../images/TI Logo-Colour.png'
 
-const Header = () => {
+type PropsType = {
+    isAdmin: boolean;
+    setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header: React.FC<PropsType> = ({isAdmin, setIsAdmin}) => {
 
     /*Constants*/
 
@@ -61,6 +66,7 @@ const Header = () => {
             </div>
 
             <div className={styles.items}>
+                <Switch checked={isAdmin} onChange={(_, checked) => setIsAdmin(checked)} />
                 <Clock />
 
                 <IconButton className={styles.button} sx={{ ...buttonStyles }} aria-label="Notification">

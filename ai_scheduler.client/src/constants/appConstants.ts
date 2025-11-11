@@ -23,21 +23,22 @@ type Modules = {
     path: string,
     image: string,
     objectFit: string,
+    requireAdmin: boolean,
 }
 
 const appModules : Modules[] = [
-        { title: "TI Automotive Home", path: "https://abctechnologies.com/", image: home, objectFit: "fill" },
-        { title: "Schedule View", path: "/schedule-view", image: viewSchedule, objectFit: "fill" },
-        { title: "Schedule Generation", path: "/schedule-generation", image: generateSchedule, objectFit: "fill" },
-        { title: "Plant Status", path: "/plant-status", image: plantStatus, objectFit: "fill" },
-        { title: "Configuration", path: "/configuration", image: config, objectFit: "fill" },
-        { title: "Logbook", path: "/log", image: log, objectFit: "fill" },
-        { title: "My Profile", path: "/profile", image: profile, objectFit: "contain" },
-        { title: "Help", path: "/help", image: help, objectFit: "contain" },
+        { title: "TI Automotive Home", path: "https://abctechnologies.com/", image: home, objectFit: "fill", requireAdmin: false },
+        { title: "Schedule View", path: "/schedule-view", image: viewSchedule, objectFit: "fill", requireAdmin: false },
+        { title: "Schedule Generation", path: "/schedule-generation", image: generateSchedule, objectFit: "fill", requireAdmin: true },
+        { title: "Plant Status", path: "/plant-status", image: plantStatus, objectFit: "fill", requireAdmin: true },
+        { title: "Configuration", path: "/configuration", image: config, objectFit: "fill", requireAdmin: true },
+        { title: "Logbook", path: "/log", image: log, objectFit: "fill", requireAdmin: true },
+        { title: "My Profile", path: "/profile", image: profile, objectFit: "contain", requireAdmin: true },
+        { title: "Help", path: "/help", image: help, objectFit: "contain", requireAdmin: false },
 ]
 
 const profileModules : Modules[] = [
-  {title: "Sign out", path: "/", image: "", objectFit: ""}
+  {title: "Sign out", path: "/", image: "", objectFit: "", requireAdmin: false}
 ]
 
 const appName : string = "AI Scheduler";

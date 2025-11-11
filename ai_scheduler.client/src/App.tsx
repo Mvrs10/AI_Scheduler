@@ -1,4 +1,4 @@
-//import { useState } from 'react'
+import { useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 
 import { ThemeProvider } from '@mui/material/styles'
@@ -10,16 +10,15 @@ import AppRouter from './AppRouter.tsx'
 import Footer from './components/Footer/Footer.tsx'
 
 function App() {
-
-  //const [signOut, setSignOut] = useState<boolean>(true)
+  const [isAdmin, setIsAdmin] = useState(false);
 
   return (
     <>
       <div>
         <BrowserRouter>
           <ThemeProvider theme={appTheme}>
-            <Header />
-              <AppRouter />
+            <Header isAdmin={isAdmin} setIsAdmin={setIsAdmin}/>
+              <AppRouter isAdmin={isAdmin} />
             <Footer />
           </ThemeProvider>
         </BrowserRouter>
