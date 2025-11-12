@@ -1,12 +1,10 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 
-type PropsType = {
-    isAdmin: boolean;
-    children: React.ReactNode;
-}
+import usePermission from '../../hooks/usePermission';
 
-const ProtectedRoute: React.FC<PropsType> = ({isAdmin, children}) => {
+const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { isAdmin } = usePermission();
   if (!isAdmin) {
     return <Navigate to="/" replace />;
   }

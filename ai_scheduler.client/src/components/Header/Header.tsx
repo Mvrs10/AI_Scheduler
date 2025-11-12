@@ -1,5 +1,3 @@
-//import React, { useState } from "react"
-//import { useNavigate } from "react-router-dom"
 import { Link } from 'react-router-dom'
 
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
@@ -8,24 +6,25 @@ import { IconButton, Avatar, Switch } from '@mui/material'
 
 import { appName, appModules, profileModules } from '../../constants/appConstants.ts'
 import useMenu from '../../hooks/useMenu.tsx'
+import usePermission from '../../hooks/usePermission.tsx'
 import NavMenu from '../../components/NavMenu/NavMenu.tsx'
 import Clock from '../../components/Clock/Clock.tsx'
 import styles from "./Header.module.css"
 import logo from '../../images/TI Logo-Colour.png'
 
-type PropsType = {
-    isAdmin: boolean;
-    setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
-}
+// type PropsType = {
+//     isAdmin: boolean;
+//     setIsAdmin: React.Dispatch<React.SetStateAction<boolean>>;
+// }
 
-const Header: React.FC<PropsType> = ({isAdmin, setIsAdmin}) => {
+const Header = () => {
 
     /*Constants*/
 
     /*State variables*/
     const appMenu = useMenu();
     const profileMenu = useMenu();
-
+    const { isAdmin, setIsAdmin } = usePermission();
     /*Styling variables*/
     const buttonStyles = {
         borderRadius: "8px",
