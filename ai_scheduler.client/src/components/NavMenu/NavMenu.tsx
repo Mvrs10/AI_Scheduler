@@ -11,6 +11,7 @@ type PropsType = {
     onClose: () => void;
     anchorOrigin: PopoverOrigin;
     transformOrigin: PopoverOrigin;
+    isAdmin: boolean;
 }
 
 const NavMenu: React.FC<PropsType> = ({
@@ -19,7 +20,8 @@ const NavMenu: React.FC<PropsType> = ({
     open,
     onClose: handleMenuClose,
     anchorOrigin,
-    transformOrigin
+    transformOrigin,
+    isAdmin
 }) => {
   return (
     <Menu 
@@ -29,7 +31,10 @@ const NavMenu: React.FC<PropsType> = ({
         anchorOrigin={anchorOrigin}
         transformOrigin={transformOrigin}
     >
-          {items.map((item,index) => (
+          {items.map((item,index) => {
+            const noDisplay = item.requireAdmin && !isAdmin;
+
+            return noDisplay? null : (
               <MenuItem
                   key={index}
                   component={Link}
@@ -39,7 +44,7 @@ const NavMenu: React.FC<PropsType> = ({
                   sx={{ "&:hover": { color: "#CE3A3E", textDecoration: "underline", textUnderlineOffset: "0.2rem" } }}  >
                   {item.title}
               </MenuItem>
-          ))}
+          )})}
     </Menu>
   )
 }

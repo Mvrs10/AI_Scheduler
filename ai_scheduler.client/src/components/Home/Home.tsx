@@ -28,8 +28,8 @@ const Home: React.FC<PropsType> = ({isAdmin}) => {
         {appModules.map((module, index) => {
           const locked = module.requireAdmin && !isAdmin;
           //const unlocked = !module.requireAdmin || isAdmin;
-          return (
-          <Card key={index} component={locked? "div":Link} to={locked? undefined:module.path} className={styles.card} elevation={3} sx={{cursor:locked?"not-allowed":"pointer", opacity:locked?0.7:1}}
+          return locked? null : (
+          <Card key={index} component={locked? "div":Link} to={locked? undefined:module.path} className={styles.card} elevation={3} sx={{cursor:locked?"not-allowed":"pointer", filter:locked?"grayscale(20%) brightness(70%)":"none"}}
             {...(module.path.includes("https") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           >
             <CardHeader
@@ -43,7 +43,7 @@ const Home: React.FC<PropsType> = ({isAdmin}) => {
                   alignSelf: "center",
                 },
               }}
-              action={<IconButton aria-label="unlocked-module">{locked? <LockOutlineIcon />:<LockOpenIcon />}</IconButton>}
+              action={<IconButton aria-label="unlocked-module">{locked? <LockOutlineIcon sx={{color: "#CE3A3E"}} />:<LockOpenIcon />}</IconButton>}
               title={<Typography sx={{ fontSize: "1.2rem", fontWeight: "600" }}>{module.title}</Typography>}
             />
             <CardMedia 

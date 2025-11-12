@@ -54,6 +54,7 @@ const Header: React.FC<PropsType> = ({isAdmin, setIsAdmin}) => {
                     onClose={appMenu.handleClose}
                     anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
                     transformOrigin={{ vertical: "top", horizontal: "left" }}
+                    isAdmin={isAdmin}
                 />
                 <Link to="/" className={styles["home-button"]}>
                     <img src={logo} alt="TI Automotive Logo" className={styles["title-logo"]} />
@@ -81,6 +82,7 @@ const Header: React.FC<PropsType> = ({isAdmin, setIsAdmin}) => {
                     onClose={profileMenu.handleClose}
                     anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
                     transformOrigin={{ vertical: "top", horizontal: "right" }}
+                    isAdmin={isAdmin}
                 />
             </div>
         </header>
