@@ -3,7 +3,7 @@ import { Routes, Route} from 'react-router-dom'
 import Home from './components/Home/Home.tsx'
 import ScheduleView from './components/ScheduleView/ScheduleView.tsx'
 import ScheduleGeneration from './components/ScheduleGeneration/ScheduleGeneration.tsx'
-import PlantStatus from './components/PlantStatus/PlantStatus.tsx'
+import PlantReport from './components/PlantReport/PlantReport.tsx'
 import Configuration from './components/Configuration/Configuration.tsx'
 import Log from './components/Log/Log.tsx'
 import Profile from './components/Profile/Profile.tsx'
@@ -28,7 +28,7 @@ const AppRouter = () => {
                 path={appModules[3].path}
                 element={
                     <ProtectedRoute>
-                        <PlantStatus />
+                        <PlantReport />
                     </ProtectedRoute>
                 }
             />

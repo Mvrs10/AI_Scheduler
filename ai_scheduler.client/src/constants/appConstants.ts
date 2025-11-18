@@ -30,7 +30,7 @@ const appModules : Modules[] = [
         { title: "TI Automotive Home", path: "https://abctechnologies.com/", image: home, objectFit: "fill", requireAdmin: false },
         { title: "Schedule View", path: "/schedule-view", image: viewSchedule, objectFit: "fill", requireAdmin: false },
         { title: "Schedule Generation", path: "/schedule-generation", image: generateSchedule, objectFit: "fill", requireAdmin: true },
-        { title: "Plant Status", path: "/plant-status", image: plantStatus, objectFit: "fill", requireAdmin: true },
+        { title: "Plant Report", path: "/plant-status", image: plantStatus, objectFit: "fill", requireAdmin: true },
         { title: "Configuration", path: "/configuration", image: config, objectFit: "fill", requireAdmin: true },
         { title: "Logbook", path: "/log", image: log, objectFit: "fill", requireAdmin: true },
         { title: "My Profile", path: "/profile", image: profile, objectFit: "contain", requireAdmin: true },
